@@ -1,0 +1,33 @@
+//O que quero é guardar em um arquivo os nomes dos contatos, números e calcular o tanto de contatos que ja tenho salvo nesse arquivo.
+string []nomes(10);
+string []telefones(10);
+int tamanho=0;
+//função para falar improvisada
+void falar(string msg){
+show_game_window(msg);
+wait(2050);
+msg="";
+}
+void main(){
+while(true){
+wait(5);
+string get=input_box("Agenda telefônica", "digite 1 para adicionar: 2 para listar: 3 para sair.");
+if(get=="1"){
+string get2=input_box("Agenda telefônica", "Digite o nome do contato");
+string get3=input_box("Agenda telefônica", "Digit o número para o contado");
+nomes[tamanho]=get2;
+telefones[tamanho]=get3;
+tamanho++;
+falar("adicionado a agenda: "+get2+"\n"+get3);
+}
+else if(get=="2"){
+for(uint i=0; i<tamanho; i++){
+alert("Lista de contatos:", nomes[i] +"\n"+telefones[i]);
+}
+}
+if(get=="3"){
+falar("saindo...");
+exit();
+}
+}
+}
